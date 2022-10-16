@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="result" id="result">Result = 0</h1>
+    <div class="inputs">
+        <input type="text" id="firstNo" placeholder="Enter First No" class="textbox" />
+        <input type="text" id="secondNo" placeholder="Enter Second No" class="textbox" />
+    </div>
+    <div class="action-buttons">
+        <button type="button" onclick="add()">+</button>
+        <button type="button" onclick="sub()">-</button>
+        <button type="button">*</button>
+        <button type="button">%</button>
+    </div>
+    <script type="text/javascript">
+        let firstNo;
+        let secondNo;
+        const add = (firstNo = 0, secondNo = 0) => {
+            firstNo = document.getElementById("firstNo").value;
+            secondNo = document.getElementById("secondNo").value;
+            if (firstNo !== "" && secondNo !== "") {
+                const sum = Number(firstNo) + Number(secondNo);
+                document.getElementById("result").innerHTML = `Your Sum is = ${sum}`;
+            } else {
+                alert('pls enter values in both fields');
+            }
+            document.getElementById("firstNo").value = "";
+            document.getElementById("secondNo").value = "";
+        }
+        const sub = () => {
+            firstNo = document.getElementById("firstNo").value;
+            secondNo = document.getElementById("secondNo").value;
+            if (firstNo !== "" && secondNo !== "") {
+                const sub = Number(firstNo) - Number(secondNo);
+                if(sub < 0) {
+                    alert(`you have a debt of ${sub}`);
+                } else {
+                    alert(`your Outcome is = ${sub}`);
+                }
+                document.getElementById("result").innerHTML = `your sub is =${sub}`;
+            } else {
+                alert("please enter value");
+            }
+            document.getElementById("firstNo").value = "";
+            document.getElementById("secondNo").value = "";
+        }
+    </script>
+</body>
+
+</html>
+
+
+
